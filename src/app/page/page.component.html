@@ -1,0 +1,34 @@
+<mat-sidenav-container fullscreen>
+	<mat-sidenav #sidenav mode="side" class="sidenav">
+		<mat-nav-list>
+			<mat-list-item routerLink="1" routerLinkActive="active">
+				<mat-icon mat-list-icon>link</mat-icon>
+				<div class="sidenav-item" [ngClass]="{ 'show': !isCollapsed }">
+					<h5>Component 1</h5>
+				</div>
+			</mat-list-item>
+			<mat-list-item routerLink="2" routerLinkActive="active">
+				<mat-icon mat-list-icon>face</mat-icon>
+				<div class="sidenav-item" [ngClass]="{ 'show': !isCollapsed }">
+					<h5>Component 2</h5>
+				</div>
+			</mat-list-item>
+			<mat-list-item routerLink="3" routerLinkActive="active">
+				<mat-icon mat-list-icon>home</mat-icon>
+				<div class="sidenav-item" [ngClass]="{ 'show': !isCollapsed }">
+					<h5>Component 3</h5>
+				</div>
+			</mat-list-item>
+		</mat-nav-list>
+	</mat-sidenav>
+	<mat-toolbar color="accent" class="mat-elevation-z1">
+		<button mat-button class="toolbar-menu-button" (click)="sidenav.toggle(); isCollapsed = !isCollapsed">
+			<mat-icon>menu</mat-icon>
+		</button>
+		<span class="toolbar-spacer"></span>
+		<img title="Your Logo" alt="Your Logo" src="https://via.placeholder.com/64.png/e0/fff" width="64" height="64" />
+	</mat-toolbar>
+	<div class="container">
+		<router-outlet></router-outlet>
+	</div>
+</mat-sidenav-container>
